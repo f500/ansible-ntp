@@ -7,7 +7,7 @@
   apt: pkg=ntpdate state=present
 
 - name: write ntp.conf
-  copy: src=ntp.conf dest=/etc/ntp.conf owner=root group=root mode=0644
+  template: src=ntp.conf.j2 dest=/etc/ntp.conf owner=root group=root mode=0644
   notify:
     - restart ntp
 
