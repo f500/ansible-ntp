@@ -7,6 +7,7 @@ ntp_servers:
     - "3.nl.pool.ntp.org"
 
 ntp_restrict_policies:
-    - "default ignore"
+    - "default kod nomodify notrap nopeer noquery"
+    - "-6 default kod nomodify notrap nopeer noquery"
     - "127.0.0.1"
-    - "::1"
+    - "-6 ::1"
